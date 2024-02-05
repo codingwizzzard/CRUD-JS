@@ -1,0 +1,145 @@
+body {
+    background-color: #282c35;
+}
+
+* {
+    color: #ffffff;
+}
+
+.header button {
+    margin: 20px;
+}
+
+b {
+    color: #3498db;
+}
+
+.form-container {
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 0.4rem;
+    background-color: #2f3640;
+    border: 2px solid #3498db;
+    position: relative;
+    transition: box-shadow 0.3s;
+}
+
+.form-container:hover {
+    box-shadow: 0 0 50px rgba(52, 152, 219, 1), 0 0 20px rgba(52, 152, 219, 0.8);
+    animation: glowFormContainer 1s infinite alternate, gradientAnimation 2s infinite;
+}
+
+@keyframes glowFormContainer {
+    0% {
+        box-shadow: 0 0 20px rgba(52, 152, 219, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 50px rgba(52, 152, 219, 1);
+    }
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #add8e6;
+}
+
+input,option,select{
+    color: #add8e6 !important;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #57606f;
+    border-radius: 0.2rem;
+    background-color: #2f3640;
+    color: #ffffff;
+    margin-top: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.form-control::placeholder {
+    color: #ffffff;
+}
+
+.form-control:focus {
+    outline: none;
+    background-color: #2f3640;
+    border: 1px solid #3498db;
+    color: #ffffff;
+}
+
+.form-floating select,
+.form-floating option {
+    background-color: #2f3640;
+    color: #ffffff;
+}
+
+.formerror {
+    color: #e57373;
+    font-weight: bold;
+}
+
+#registrationForm {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#listSection h2 {
+    color: #3498db;
+}
+
+.btns {
+    font-size: 1.5rem;
+    display: inline-block;
+    width: 120px;
+    height: 50px;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    background: linear-gradient(45deg, #3498db, #2c3e50, #3498db);
+    background-size: 400%;
+    color: #ffffff;
+    font-weight: 700;
+    transition: 0.6s cubic-bezier(0.03, 0.6, 0.95, 0.46);
+}
+
+.btns:active {
+    transform: scale(0.92);
+}
+
+.btns:hover {
+    background-position: 100%;
+    animation: gradientAnimation 2.5s infinite, glowAnimation 1s infinite alternate;
+    animation-direction: alternate;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+@keyframes glowAnimation {
+    0% {
+        box-shadow: 0 0 20px rgba(52, 152, 219, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 50px rgba(52, 152, 219, 1);
+    }
+}

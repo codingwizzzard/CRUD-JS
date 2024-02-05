@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header d-flex justify-content-end">
+        <button id="registerBtn" class="btns">Register</button>
+        <button id="listBtn" class="btns">List</button>
+    </div>
+
+    <!-- Form -->
+    <div class="form-container">
+        <form id="registrationForm" action="" method="post" onsubmit="return validateForm()">
+            <div class="form-group form-floating">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Type your name">
+                <label for="name"><b>Name</b></label>
+                <div class="formerror" id="nameError"></div>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="email" id="email" class="form-control" placeholder="name@example.com">
+                <label for="email"><b>Email address</b></label>
+                <div class="formerror" id="emailError"></div>
+            </div>
+            <div class="form-floating">
+                <input type="password" id="password" class="form-control" placeholder="Password">
+                <label for="password"><b>Password</b></label>
+                <div class="formerror" id="passwordError"></div>
+            </div>
+
+            <div class="form-group mt-4">
+                <label class="me-3"><b>Gender  : </b></label>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="male" name="gender" class="form-check-input" value="male">
+                    <label for="male" class="form-check-label">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="female" name="gender" class="form-check-input" value="female">
+                    <label for="female" class="form-check-label">Female</label>
+                </div>
+                <div class="formerror" id="genderError"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="me-3"><b>Hobbies  : </b></label>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="reading" name="hobbies" class="form-check-input" value="coding">
+                    <label for="coding" class="form-check-label">Coding</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="traveling" name="hobbies" class="form-check-input" value="cricket">
+                    <label for="cricket" class="form-check-label">Cricket</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="teaching" name="hobbies" class="form-check-input" value="teaching">
+                    <label for="teaching" class="form-check-label">Teaching</label>
+                </div>
+                <div class="formerror" id="hobbiesError"></div>
+            </div>
+
+            <div class="form-floating">
+                <select class="form-select" id="selectOption" aria-label="Floating label select example">
+                    <option value="">Open this select menu</option>
+                    <option value="FULL-STACK DEVELOPMENT">FULL-STACK DEVELOPMENT</option>
+                    <option value="FRONT END">FRONT END</option>
+                    <option value="BACK END">BACK END</option>
+                </select>
+                <label for="selectOption"><b>Courses</b></label>
+                <div class="formerror" id="selectError"></div>
+            </div>
+
+            <div class="form-floating mt-4">
+                <textarea class="form-control" placeholder="Leave a comment here" id="address"
+                    style="height: 100px"></textarea>
+                <label for="address"><b>Address</b></label>
+                <div class="formerror" id="addressError"></div>
+            </div>
+
+            <button type="button" class="btns d-flex align-items-center mt-4 justify-content-center"
+                onclick="addUser()">Submit</button>
+        </form>
+
+        <!-- List Section -->
+        <div id="listSection" style="display: none;">
+            <h2 class="text-center mb-4">User List</h2>
+            <table id="userTable" class="table table-dark table-striped table-hover align-middle text-center table-responsive">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Gender</th>
+                        <th>Hobbies</th>
+                        <th>Courses</th>
+                        <th>Address</th>
+                        <th>Option</th>
+                    </tr>
+                </thead>                
+                <tbody id="userTableBody" class="table-group-divider"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- JS -->
+    <script src="assets/js/validation.js"></script>
+    <script src="assets/js/crud.js"></script>
+</body>
+
+</html>

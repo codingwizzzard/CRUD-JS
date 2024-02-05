@@ -19,7 +19,7 @@ class User {
     show() {
         let output = "";
 
-        this.userData.forEach((user, index) => {
+        this.userData.forEach((user, i) => {
             const hobbies = user.hobbies ? user.hobbies.join(', ') : '';
             const userInfo = `
                 <tr>
@@ -31,10 +31,10 @@ class User {
                   <td>${user.course}</td>
                   <td>${user.address || ''}</td>
                   <td>
-                    <button onclick="editButton(${index})" class="btn2 edit bg-primary border-0">
+                    <button onclick="editButton(${i})" class="btn2 edit bg-primary border-0">
                         <i class="fa-solid fa-pen-to-square"></i>
                     </button>
-                    <button onclick="deleteButton(${index})" class="btn2 delete bg-danger border-0">
+                    <button onclick="deleteButton(${i})" class="btn2 delete bg-danger border-0">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                   </td>
@@ -61,7 +61,7 @@ class User {
 
             let address = document.getElementById('address').value;
 
-            if (index === -1) {
+            if (index < 0) {
                 this.userData.push({
                     name: userName,
                     email: email,
@@ -95,9 +95,9 @@ class User {
     }
 
     edit(userIndex) {
-        this.userData.forEach((user, index) => {
-            if (userIndex === index) {
-                index = index;
+        this.userData.forEach((user, i) => {
+            if (userIndex === i) {
+                index = i;
                 document.querySelector("#name").value = user.name;
                 document.querySelector("#email").value = user.email;
                 document.querySelector("#selectOption").value = user.course;
